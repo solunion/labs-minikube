@@ -1,0 +1,8 @@
+auth:
+  username: postgres
+  password: frm8nxh@wfq0RWF2hfv
+primary:
+  service:
+    type: NodePort
+    nodePorts:
+      postgresql: 5432
