@@ -6,3 +6,16 @@ primary:
     type: NodePort
     nodePorts:
       postgresql: 5432
+  initdb:
+    scripts:
+        00_way_create_user.sql: |
+          create user way with
+            createdb
+            login
+            password 'NKU6ktr!cau7ryj.fmy';
+        01_way_create_database.sql: |
+          create database way
+            with owner way;
+        02_way_create_schema.sql: |
+          \connect way
+          create schema if not exists way authorization way;
